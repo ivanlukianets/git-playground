@@ -48,6 +48,10 @@ while not is_game_over():
     if not guess_is_valid(guess):
         continue
 
+    if guess in guessed:
+        errors += 1
+        print(f"Oops :( You have entered such word, you have {ERRORS_TO_LOSE - errors} lives more")
+
     if guess in full_list:
         guessed += 1
         guesses.append(guess)
