@@ -8,6 +8,12 @@ def congratulate_user():
     print("= Congratulations! You won! =")
     print("=============================")
 
+def loser_user():
+
+    print("=============================")
+    print("=  You lost! =")
+    print("=============================")
+
 
 
 def is_game_over():
@@ -62,3 +68,6 @@ while not is_game_over():
     else:
         errors += 1
         print(f"Oops :( No such word, you have {ERRORS_TO_LOSE - errors} lives more")
+    if errors == ERRORS_TO_LOSE:
+        loser_user()
+        exit()
